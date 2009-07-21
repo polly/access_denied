@@ -1,0 +1,4 @@
+roles:
+  admin
+  privileged_user
+  regular_user
