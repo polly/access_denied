@@ -1,4 +1,4 @@
 roles:
-  admin
-  privileged_user
-  regular_user
+  admin:           1
+  privileged_user: 2
+  regular_user:    3
