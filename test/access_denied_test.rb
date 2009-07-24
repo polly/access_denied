@@ -12,14 +12,12 @@ class AccessDeniedTest < ActiveSupport::TestCase
   end
 
   test "that the privileged_user? method returns false for an admin user" do
-    class ::User < ActiveRecord::Base; set_table_name :admin_user; end
     user = User.new
 
     assert_equal false, user.privileged_user?
   end
 
   test "that the regular_user? method returns false for an admin user" do
-    class ::User < ActiveRecord::Base; set_table_name :admin_user; end
     user = User.new
 
     assert_equal false, user.privileged_user?
