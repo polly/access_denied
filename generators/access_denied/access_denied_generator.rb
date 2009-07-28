@@ -1,11 +1,17 @@
 class AccessDeniedGenerator < Rails::Generator::Base
   def manifest
     record do |m|
-      # m.directory "lib"
-      # m.template 'README', "README"
-      m.template "add_roles_to_user_migration.rb", "db/migrate/#{generate_migration_prefix}add_roles_to_user.rb"
-      m.template "access_denied_config.yml",       "config/access_denied_config.yml"
-      m.template "access_denied_config_loader.rb",    "config/initializers/access_denied_config_loader.rb"
+      # Library files:
+      m.template "access_denied.rb",                     "lib/access_denied.rb"
+      m.template "load_access_denied_config.rb",         "lib/access_denied/config/load_access_denied_config.rb"
+      m.template "application_controller_extensions.rb", "lib/access_denied/extensions/application_controller_extensions.rb"
+      m.template "user_extensions.rb",                   "lib/access_denied/extensions/user_extensions.rb"
+      m.template "add_roles_to_user_migration.rb",       "db/migrate/#{generate_migration_prefix}add_roles_to_user.rb"
+      m.template "access_denied_config.yml",             "config/access_denied_config.yml"
+
+      # Test files:
+      m.template "application_controller_extensions_test.rb", "test/functional/application_controller_extensions_test.rb"
+      m.template "user_extensions_test.rb", "test/unit/user_extensions_test.rb"
     end
   end
 
