@@ -13,5 +13,3 @@ module UserExtensions
     end
   end
 end
-
-User.send :include, UserExtensions
