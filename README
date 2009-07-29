@@ -1,7 +1,7 @@
 Access Denied
 ============
 
-Access Denied is a plugin for handling authorization in a rails project
+Generators for adding simple authorization to nifty-autentication
 
 
 Example
